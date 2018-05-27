@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+    <title>Interactive Visualization</title>
+	<style>
+      
+      .group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Document styling */
+body {
+	font-family: "verdana", verdana, garamond;
+	width: 1120px;
+	margin: 0 auto;
+	font-size: 14px;
+}
+
+#wrapper {
+	position: relative;
+}
+
+#title {
+	font-size: 24px;
+	font-weight: 100;
+}
+#title div.large, #title span.large {
+	font-size: 36px;
+}
+
+      
+      svg {
+	width: 820px;
+	height: 820px;
+	font-family: helvetica, sans-serif;
+}
+
+path, line {
+	fill: #225D23;
+	stroke: #eee;
+	stroke-width: 0.5px;
+	cursor: pointer;
+}
+      
+      body {
+	width: 1170px;
+}
+
+#chart {
+	position: relative;
+	height: 575px;
+	margin: 10px;
+}
+
+#menu {
+	margin: 10px;
+}
+
+#menu div {
+	background-color: yellow;
+	color: green;
+	width: 150px;
+	padding: 5px;
+	margin: 1px;
+	cursor: pointer;
+	float: left;
+	text-align: center;
+}
+
+div.player {
+	position: absolute;
+	background-color:#7ea963;
+	text-align: center;
+	color: white;
+	cursor: pointer;
+}
+
+#menu .selected, #chart .selected {
+	background-color:orange;
+}
+
+div.player div.name {
+	font-size: 11px;
+	font-weight: 400;
+	padding-top: 3px;
+}
+
+div.player div.value {
+	font-size: 28px;
+	font-weight: 400;
+	padding-top: 7px;
+}
+
+#title {
+	margin: 0 0 50px 10px;
+}
+      
+    </style>
+	</head>
+
+	<body>
+	
+	<div id="title"><span class="large" ><font color =" red">Interactive Visualization of Australian Open (2004 -2014)</font> </span></div>
+		</div>
+		<div id="wrapper" style="padding-top:1px;">
+            <select id="select-year" onchange="changeYear()">
+              <option selected>2004</option>
+              <option>2005</option>
+              <option>2006</option>
+              <option>2007</option>
+              <option>2008</option>
+              <option>2009</option>
+              <option>2010</option>
+              <option>2011</option>
+              <option>2012</option>
+              <option>2013</option>
+              <option>2014</option>
+            </select>
+			<div id="menu" class="group"></div>
+			<div id="chart"></div>
+			
+		</div>
+
+		
+        <script src="https://d3js.org/d3.v3.min.js"></script>
+        <script src="yearly.js"></script>
+	</body>
+</html>
